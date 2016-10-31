@@ -60,7 +60,14 @@ namespace _2dskt_constraints
             Line2D lin2 = CreateLine(fac2d, p2, p3);
             Line2D lin3 = CreateLine(fac2d, p3, p4);
             Line2D lin4 = CreateLine(fac2d, p4, p1);
-            
+
+            CatConstraintType cnstDis = CatConstraintType.catCstTypeDistance;
+
+            MECMOD.Constraint d1 = createCnst(prt, skt1, cnstDis, lin1, lin2);
+            MECMOD.Constraint d2 = createCnst(prt, skt1, cnstDis, lin2, lin4);
+            MECMOD.Constraint d3 = createCnst(prt, skt1, cnstDis, skt1.AbsoluteAxis.HorizontalReference, lin4);
+            MECMOD.Constraint d4 = createCnst(prt, skt1, cnstDis, skt1.AbsoluteAxis.VerticalReference, lin1);
+            /*
             INFITF.Reference rline1 = prt.CreateReferenceFromGeometry(lin1);
             INFITF.Reference rline2 = prt.CreateReferenceFromGeometry(lin2);
             INFITF.Reference rline3 = prt.CreateReferenceFromGeometry(lin3);
@@ -72,7 +79,7 @@ namespace _2dskt_constraints
             MECMOD.Constraint d2 = skt1.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rline2, rline4);
             MECMOD.Constraint d3 = skt1.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rlineH, rline4);
             MECMOD.Constraint d4 = skt1.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rlineV, rline1);
-
+            */
             skt1.CloseEdition();
 
            //create a circlr
@@ -97,6 +104,14 @@ namespace _2dskt_constraints
             Pocket pock = ShpFac.AddNewPocket(skt2,-20);
 
             prt.Update();
+        }
+
+        private MECMOD.Constraint createCnst(Part prt, Sketch skt, CatConstraintType cnstType, INFITF.AnyObject ob1, INFITF.AnyObject ob2)
+        {
+            INFITF.Reference ref1 = prt.CreateReferenceFromGeometry(ob1);
+            INFITF.Reference ref2 = prt.CreateReferenceFromGeometry(ob2);
+            MECMOD.Constraint cnst = skt.Constraints.AddBiEltCst(cnstType, ref1, ref2);
+            return cnst;
         }
 
         private static Line2D CreateLine(Factory2D fac, Point2D p1, Point2D p2)
