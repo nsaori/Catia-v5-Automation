@@ -42,6 +42,12 @@ namespace sktconsPractice
             Point2D p3 = fac2d.CreatePoint(100, 100);
             Point2D p4 = fac2d.CreatePoint(100, 50);
 
+            //method를 만들고 line생성
+            Line2D lin1 = CreateLine(fac2d,p1,p2);
+            Line2D lin2 = CreateLine(fac2d, p2, p3);
+            Line2D lin3 = CreateLine(fac2d, p3, p4);
+            Line2D lin4 = CreateLine(fac2d, p4, p1);
+            /*
             Line2D lin1 = fac2d.CreateLine(50,50,50,100);
             Line2D lin2 = fac2d.CreateLine(50, 100, 100, 100);
             Line2D lin3 = fac2d.CreateLine(100, 100, 100, 50);
@@ -58,6 +64,7 @@ namespace sktconsPractice
 
             lin4.StartPoint = p4;
             lin4.EndPoint = p1;
+            */
 
             INFITF.Reference rline1 = prt.CreateReferenceFromGeometry(lin1);
             INFITF.Reference rline2 = prt.CreateReferenceFromGeometry(lin2);
@@ -73,6 +80,23 @@ namespace sktconsPractice
 
             skt.CloseEdition();
 
+        }
+
+        private static Line2D CreateLine(Factory2D fac, Point2D p1, Point2D p2)
+        {
+            //point 두개를 받아서 
+            object[] ob1 = new object[2];
+            p1.GetCoordinates(ob1);
+
+            object[] ob2 = new object[2];
+            p1.GetCoordinates(ob2);
+
+            Line2D line = fac.CreateLine((double)ob1[0], (double)ob1[1], (double)ob2[0], (double)ob2[1]);
+
+            line.StartPoint = p1;
+            line.EndPoint = p2;
+
+            return line;
         }
     }
 }

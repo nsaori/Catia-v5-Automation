@@ -12,3 +12,4 @@ C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\2dskt_constraints\o
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\2dskt_constraints\obj\Debug\2dskt_constraints.csproj.GenerateResource.Cache
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\2dskt_constraints\obj\Debug\2dskt_constraints.exe
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\2dskt_constraints\obj\Debug\2dskt_constraints.pdb
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\2dskt_constraints\obj\Debug\Interop.PARTITF.dll

@@ -77,6 +77,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="PARTITF">
+      <Guid>{D8431606-E4B5-11D1-A5D3-00A0C95752ED}</Guid>
+      <VersionMajor>0</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="ProductStructureTypeLib">
       <Guid>{5065F8B6-61BB-11D1-9D85-0000F8759F82}</Guid>
       <VersionMajor>0</VersionMajor>
