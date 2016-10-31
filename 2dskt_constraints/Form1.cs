@@ -70,9 +70,12 @@ namespace _2dskt_constraints
             linTop.StartPoint = p2;
             linTop.EndPoint = p3;
 
-            //------------------
-            skt.Constraints.AddBiEltCst();
-
+            MECMOD.Constraint cnst = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeAxisPerpendicularity,(INFITF.Reference)linLft,(INFITF.Reference)linTop);
+            /*
+            INFITF.Reference r1 = prt.CreateReferenceFromGeometry(linLft);
+            INFITF.Reference r2 = prt.CreateReferenceFromGeometry(linTop);
+            MECMOD.Constraint cnst1 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeAxisPerpendicularity, r1, r2);
+            */
             skt.CloseEdition();
         }
     }

@@ -49,10 +49,13 @@ namespace sktconsPractice
 
             lin1.StartPoint = p1;
             lin1.EndPoint = p2;
+
             lin2.StartPoint = p2;
             lin2.EndPoint = p3;
+
             lin3.StartPoint = p3;
             lin3.EndPoint = p4;
+
             lin4.StartPoint = p4;
             lin4.EndPoint = p1;
 
@@ -60,14 +63,13 @@ namespace sktconsPractice
             INFITF.Reference rline2 = prt.CreateReferenceFromGeometry(lin2);
             INFITF.Reference rline3 = prt.CreateReferenceFromGeometry(lin3);
             INFITF.Reference rline4 = prt.CreateReferenceFromGeometry(lin4);
-
-            INFITF.Reference rline5 = prt.CreateReferenceFromGeometry(skt.AbsoluteAxis.HorizontalReference);
-            INFITF.Reference rline6 = prt.CreateReferenceFromGeometry(skt.AbsoluteAxis.VerticalReference);
+            INFITF.Reference rlineH = prt.CreateReferenceFromGeometry(skt.AbsoluteAxis.HorizontalReference);
+            INFITF.Reference rlineV = prt.CreateReferenceFromGeometry(skt.AbsoluteAxis.VerticalReference);
 
             Constraint d1 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance,rline1,rline3);
             Constraint d2 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rline2, rline4);
-            Constraint d3 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rline5, rline4);
-            Constraint d4 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rline6, rline1);
+            Constraint d3 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rlineH, rline4);
+            Constraint d4 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, rlineV, rline1);
 
             skt.CloseEdition();
 
