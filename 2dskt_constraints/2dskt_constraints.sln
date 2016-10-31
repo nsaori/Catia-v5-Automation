@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2dskt_constraints", "2dskt_constraints.csproj", "{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sktconsPractice", "..\sktconsPractice\sktconsPractice.csproj", "{86D345E6-893F-40DA-9A7E-8E93771EB6DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
