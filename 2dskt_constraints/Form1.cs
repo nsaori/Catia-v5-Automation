@@ -60,7 +60,7 @@ namespace _2dskt_constraints
             Line2D linTop = fac2d.CreateLine(10, 40, 40, 40);
             Line2D linRgt = fac2d.CreateLine(40, 40, 40, 10);
 
-            Point2D[] parry = { p1, p6, p5, p4 };
+            object[] parry = { p1, p6, p5, p4 };
             Spline2D spl = fac2d.CreateSpline(parry);
 
             linLft.StartPoint = p1;
@@ -77,6 +77,8 @@ namespace _2dskt_constraints
             MECMOD.Constraint cnst1 = skt.Constraints.AddBiEltCst(CatConstraintType.catCstTypeAxisPerpendicularity, r1, r2);
             */
             skt.CloseEdition();
+
+            prt.Update();
         }
     }
 }
