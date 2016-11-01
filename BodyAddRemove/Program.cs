@@ -29,8 +29,8 @@ namespace BodyAddRemove
             PartDocument prtDoc = (PartDocument)catia.Documents.Add("Part");
             Part prt = prtDoc.Part;
             Bodies bdys = prt.Bodies;
-
-            
+            Body PartBody = bdys.Item(1);   //
+                        
             INFITF.Reference xypln = (INFITF.Reference)prt.OriginElements.PlaneXY;  //다른 body에서 사용가능
             ShapeFactory shpfac = (ShapeFactory)prt.ShapeFactory;
 
@@ -44,7 +44,7 @@ namespace BodyAddRemove
 
             skt.CloseEdition();
 
-            Pad p1 = shpfac.AddNewPad(skt,100);
+            Pad p1 = shpfac.AddNewPad(skt,80);
 
             //2
             Body bdy2 = bdys.Add();
@@ -61,13 +61,18 @@ namespace BodyAddRemove
             Sketch skt3 = bdy3.Sketches.Add(xypln);
             fac2d = skt3.OpenEdition();
 
-            Point2D pt1 = fac2d.CreatePoint(75, 80);
-            Point2D pt2 = fac2d.CreatePoint(70, 70);
-            Point2D pt3 = fac2d.CreatePoint(80, 70);
-
-            CreateTriangle(fac2d, prt, skt3, pt1, pt2, pt3);
+                Point2D pt1 = fac2d.CreatePoint(75, 80);
+                Point2D pt2 = fac2d.CreatePoint(70, 70);
+                Point2D pt3 = fac2d.CreatePoint(80, 70);
+                CreateTriangle(fac2d, prt, skt3, pt1, pt2, pt3);
 
             skt3.CloseEdition();
+            Pad p3 = shpfac.AddNewPad(skt3,100);
+
+            prt.InWorkObject = PartBody;
+            shpfac.AddNewAdd(bdy1);
+            shpfac.AddNewAdd(bdy2);
+            shpfac.AddNewRemove(bdy3);
 
             prt.Update();
         }
