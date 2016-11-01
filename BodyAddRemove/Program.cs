@@ -72,11 +72,22 @@ namespace BodyAddRemove
             prt.Update();
         }
 
-        private static void CreateTriangle(Factory2D fac, Part prt, Sketch skt3, Point2D pt1, Point2D pt2, Point2D pt3)
+        private static void CreateTriangle(Factory2D fac, Part prt, Sketch skt, Point2D p1, Point2D p2, Point2D p3)
         {
-            Line2D lin1 = CreateLine(fac, pt1, pt2);
-            Line2D lin2 = CreateLine(fac, pt2, pt3);
-            Line2D lin3 = CreateLine(fac, pt3, pt1);
+            Line2D lin1 = CreateLine(fac, p1, p2);
+            Line2D lin2 = CreateLine(fac, p2, p3);
+            Line2D lin3 = CreateLine(fac, p3, p1);
+
+            CatConstraintType cntL = CatConstraintType.catCstTypeLength;
+            CatConstraintType cntD = CatConstraintType.catCstTypeDistance;
+           // CreateCnst(prt, skt, cntL, lin1);  //다중구속이 되어 error
+            CreateCnst(prt, skt, cntL, lin2);
+            CreateCnst(prt, skt, cntL, lin3);
+            //CreateCnst(prt, skt, CatConstraintType.catCstTypeHorizontality, lin2);
+            CreateCnst(prt, skt, cntD, p1, skt.AbsoluteAxis.HorizontalReference);
+            CreateCnst(prt, skt, cntD, p1, skt.AbsoluteAxis.VerticalReference);
+            CreateCnst(prt, skt, cntD, p2, skt.AbsoluteAxis.HorizontalReference);
+            CreateCnst(prt, skt, cntD, p2, skt.AbsoluteAxis.VerticalReference);
         }
 
         private static void CreateRectangle(Factory2D fac, Part prt, Sketch skt, double x1, double y1, double x2, double y2)
@@ -118,7 +129,7 @@ namespace BodyAddRemove
             p1.GetCoordinates(ob1);
 
             object[] ob2 = new object[2];
-            p1.GetCoordinates(ob2);
+            p2.GetCoordinates(ob2);
 
             Line2D line = fac.CreateLine((double)ob1[0], (double)ob1[1], (double)ob2[0], (double)ob2[1]);
             line.StartPoint= p1;
