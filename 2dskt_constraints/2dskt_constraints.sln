@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2dskt_constraints", "2dskt_constraints.csproj", "{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sktconsPractice", "..\sktconsPractice\sktconsPractice.csproj", "{86D345E6-893F-40DA-9A7E-8E93771EB6DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice", "..\Taitanic_p39\practice.csproj", "{E112B974-8679-4B68-A7F6-863E5FB4A04D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E44E6551-AEEB-419A-8A75-CD4EC8BB783A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86D345E6-893F-40DA-9A7E-8E93771EB6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E112B974-8679-4B68-A7F6-863E5FB4A04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E112B974-8679-4B68-A7F6-863E5FB4A04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E112B974-8679-4B68-A7F6-863E5FB4A04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E112B974-8679-4B68-A7F6-863E5FB4A04D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

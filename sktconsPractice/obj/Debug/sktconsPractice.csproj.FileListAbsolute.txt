@@ -9,3 +9,4 @@ C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\sktconsPractice\bin
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\sktconsPractice\obj\Debug\sktconsPractice.exe
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\sktconsPractice\obj\Debug\sktconsPractice.pdb
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\sktconsPractice\obj\Debug\sktconsPractice.csprojResolveAssemblyReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\sktconsPractice\obj\Debug\Interop.PARTITF.dll

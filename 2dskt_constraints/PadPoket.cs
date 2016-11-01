@@ -46,9 +46,9 @@ namespace _2dskt_constraints
             MECMOD.Sketches skts = bdy.Sketches;
 
             INFITF.Reference xypln = (INFITF.Reference)prt.OriginElements.PlaneXY;
-            MECMOD.Sketch skt1 = skts.Add(xypln);
+            Sketch skt1 = skts.Add(xypln);
 
-            MECMOD.Factory2D fac2d = skt1.OpenEdition();
+            Factory2D fac2d = skt1.OpenEdition();   //fac2d안에서 sketch가 이루어진다. fac2d cketch의 기능을 쓸수있다
 
             Point2D p1 = fac2d.CreatePoint(10, 10);
             Point2D p2 = fac2d.CreatePoint(10, 30);
@@ -62,8 +62,9 @@ namespace _2dskt_constraints
             Line2D lin4 = CreateLine(fac2d, p4, p1);
 
             CatConstraintType cnstDis = CatConstraintType.catCstTypeDistance;
-
-            MECMOD.Constraint d1 = createCnst(prt, skt1, cnstDis, lin1, lin2);
+            
+             
+            MECMOD.Constraint d1 = createCnst(prt, skt1, cnstDis, lin1, lin3);
             MECMOD.Constraint d2 = createCnst(prt, skt1, cnstDis, lin2, lin4);
             MECMOD.Constraint d3 = createCnst(prt, skt1, cnstDis, skt1.AbsoluteAxis.HorizontalReference, lin4);
             MECMOD.Constraint d4 = createCnst(prt, skt1, cnstDis, skt1.AbsoluteAxis.VerticalReference, lin1);
@@ -85,13 +86,15 @@ namespace _2dskt_constraints
            //create a circlr
             Sketch skt2 = skts.Add(xypln);
             Factory2D fac2d1 = skt2.OpenEdition();
+           //fac2d = skt2.OpenEdition();   //이렇게 함녀 된다.
 
             INFITF.Reference H = prt.CreateReferenceFromGeometry(skt2.AbsoluteAxis.HorizontalReference);
             INFITF.Reference V = prt.CreateReferenceFromGeometry(skt2.AbsoluteAxis.VerticalReference);
 
             Circle2D c = fac2d1.CreateClosedCircle(40,30,10);
-            MECMOD.Constraint orPtH = skt2.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance,H,(INFITF.Reference)c);
-            MECMOD.Constraint orPtV = skt2.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, V, (INFITF.Reference)c);
+            c.CenterPoint = p3;
+            // MECMOD.Constraint orPtH = skt2.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance,H,(INFITF.Reference)c);
+            //MECMOD.Constraint orPtV = skt2.Constraints.AddBiEltCst(CatConstraintType.catCstTypeDistance, V, (INFITF.Reference)c);
             MECMOD.Constraint r = skt2.Constraints.AddMonoEltCst(CatConstraintType.catCstTypeRadius,(INFITF.Reference)c);
 
             skt2.CloseEdition();
@@ -101,7 +104,8 @@ namespace _2dskt_constraints
             Pad pad = ShpFac.AddNewPad(skt1, 20);
 
             //poket
-            Pocket pock = ShpFac.AddNewPocket(skt2,-20);
+            Pocket pock = ShpFac.AddNewPocket(skt2,20);
+            pock.DirectionOrientation = CatPrismOrientation.catRegularOrientation;
 
             prt.Update();
         }
