@@ -1,0 +1,30 @@
+C:\csharp\16-10-31\WindowsFormsApplication8\bin\Debug\WindowsFormsApplication8.exe.config
+C:\csharp\16-10-31\WindowsFormsApplication8\bin\Debug\WindowsFormsApplication8.exe
+C:\csharp\16-10-31\WindowsFormsApplication8\bin\Debug\WindowsFormsApplication8.pdb
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\Interop.INFITF.dll
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\Interop.MECMOD.dll
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\WindowsFormsApplication8.csproj.ResolveComReference.cache
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\WindowsFormsApplication8.Form1.resources
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\WindowsFormsApplication8.Properties.Resources.resources
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\WindowsFormsApplication8.csproj.GenerateResource.Cache
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\WindowsFormsApplication8.exe
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\WindowsFormsApplication8.pdb
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\WindowsFormsApplication8.csprojResolveAssemblyReference.cache
+C:\csharp\16-10-31\WindowsFormsApplication8\obj\Debug\Interop.PARTITF.dll
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\bin\Debug\WindowsFormsApplication8.exe.config
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\Interop.PARTITF.dll
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\WindowsFormsApplication8.csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\WindowsFormsApplication8.exe
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\WindowsFormsApplication8.pdb
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\bin\Debug\WindowsFormsApplication8.exe
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\bin\Debug\WindowsFormsApplication8.pdb
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\WindowsFormsApplication8.csprojResolveAssemblyReference.cache
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\WindowsFormsApplication8.Form1.resources
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\WindowsFormsApplication8.Properties.Resources.resources
+C:\Users\517-11\Desktop\saori\Automation\SA\KISHI HIDEKAZU\obj\Debug\WindowsFormsApplication8.csproj.GenerateResource.Cache
