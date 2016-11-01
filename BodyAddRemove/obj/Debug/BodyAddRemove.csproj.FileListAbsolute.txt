@@ -1,0 +1,11 @@
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\bin\Debug\BodyAddRemove.exe.config
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\bin\Debug\BodyAddRemove.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\bin\Debug\BodyAddRemove.pdb
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\BodyAddRemove.csprojResolveAssemblyReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\Interop.PARTITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\BodyAddRemove.csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\BodyAddRemove.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\BodyAddRemove\obj\Debug\BodyAddRemove.pdb
