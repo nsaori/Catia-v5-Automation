@@ -48,17 +48,14 @@ namespace Titanicp._40_Assy_
             pdct1.Products.AddComponentsFromFiles(tpath1, "*");
             //ass1.AddComponentsFromFiles(tpath1,"*");
 
-            //    Product pdctRef = pdcts.AddNewProduct("p");
-            // pdctRef = pdct1.ReferenceProduct;
             Product pdctRef = pdct1.ReferenceProduct;
-            Product pdct2 = pdcts.AddComponent(pdctRef);
-            //Product pdct2 = pdcts.AddNewProduct("p2");
-            //pdct1 = pdcts.AddComponent(pdctRef);
-            //Product pdct3 = pdcts.AddNewProduct("p3");
             object[] aDistance = {1,0,0,0,1,0,0,0,1, 60, 0, 0 };
+
+            Product pdct2 = pdcts.AddComponent(pdctRef);
             pdct2.Move.Apply(aDistance);
 
             aDistance[9] = 120;
+
             Product pdct3 = pdcts.AddComponent(pdctRef);
             pdct3.Move.Apply(aDistance);
         }
