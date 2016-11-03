@@ -49,15 +49,19 @@ namespace Titanicp._40_Assy_
             //ass1.AddComponentsFromFiles(tpath1,"*");
 
             Product pdctRef = pdct1.ReferenceProduct;
-            object[] aDistance = {1,0,0,0,1,0,0,0,1, 60, 0, 0 };
+            object[] aDistance = {1,0,0, 0,1,0, 0,0,1, 60, 0, 0 };  //x-vector x,y,z / y(x,y,z) / z(x,y,z) / 이동x,y,z
 
             Product pdct2 = pdcts.AddComponent(pdctRef);
             pdct2.Move.Apply(aDistance);
 
             aDistance[9] = 120;
-
+            
             Product pdct3 = pdcts.AddComponent(pdctRef);
             pdct3.Move.Apply(aDistance);
+
+            pdct.ExtractBOM(CatFileType.catFileTypeText, @"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Titanicp.40(Assy)\Bom.txt");
+            pdct.ExtractBOM(CatFileType.catFileTypeHTML, @"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Titanicp.40(Assy)\BOM.html");
+
         }
     }
 }
