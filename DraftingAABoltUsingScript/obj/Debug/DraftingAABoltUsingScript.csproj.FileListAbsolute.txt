@@ -1,0 +1,12 @@
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\bin\Debug\DraftingAABoltUsingScript.exe.config
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\bin\Debug\DraftingAABoltUsingScript.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\bin\Debug\DraftingAABoltUsingScript.pdb
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\DraftingAABoltUsingScript.csprojResolveAssemblyReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\Interop.DRAFTINGITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\DraftingAABoltUsingScript.csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\DraftingAABoltUsingScript.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\DraftingAABoltUsingScript\obj\Debug\DraftingAABoltUsingScript.pdb
