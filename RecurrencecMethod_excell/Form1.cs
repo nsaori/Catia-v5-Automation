@@ -11,9 +11,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MECMOD;
 using ProductStructureTypeLib;
 using System.Runtime.InteropServices;
+
+using Excel = Microsoft.Office.Interop.Excel;
+//using NPOI.SS.UserModel;
 
 namespace RecurrencecMethod_excell
 {
@@ -35,17 +39,24 @@ namespace RecurrencecMethod_excell
             catch (Exception)
             {
                 catia = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("CATIA.Applicationa"));
+                catia.Visible = true;
             }
-            catia.Visible = true;
-
+            /////Product.Products.count
             ProductDocument pdctDoc = (ProductDocument)catia.Documents.Add("Pruduct");
-            Product pdct = pdctDoc.Product;
-            Products pdcts = pdct.Products;
+            
 
             //excel ---------------------------
             INFITF.Application excel;
-            excel = 
-
+            try
+            {
+                excel = (INFITF.Application)Marshal.GetActiveObject("EXCEL.Application");
+            }
+            catch (Exception)
+            {
+                excel = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("EXCEL.Application"));
+                excel.Visible = true;
+            }
+            Excel.Workbook wb = excel.;
         }
     }
 }
