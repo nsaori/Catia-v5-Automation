@@ -67,6 +67,25 @@ namespace DraftingAABoltUsingScript
             Factory2D facT = Topvw.Factory2D;
             Circle2D c2 = facT.CreateClosedCircle(30,30,20);
 
+
+            //text 추가하기---------------
+            FrntView.Activate();
+            DrawingText Ftxt = FrntView.Texts.Add("Front View",100,100);
+            Ftxt.SetFontSize(0,0,12);
+            
+            DrawingLeader FDleadr = Ftxt.Leaders.Add(0,0);
+
+            //txt cnrk--------------------
+            Topvw.Activate();
+            DrawingText Ttxt = Topvw.Texts.Add("Top View",-45,130);
+            Ttxt.SetFontSize(0, 0, 12);
+
+            DrawingLeader TDleadr = Ttxt.Leaders.Add(0, 0);
+
+            //table추가하기
+            DrawingTable table = FrntView.Tables.Add(100,80,2,3,14,40);
+            //table.
+
             //11. update the drawing document.
             drwDoc.Update();
         }

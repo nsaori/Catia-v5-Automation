@@ -7,3 +7,7 @@ C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_e
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_excell\obj\Debug\Interop.PARTITF.dll
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_excell\obj\Debug\Interop.ProductStructureTypeLib.dll
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_excell\obj\Debug\RecurrencecMethod_excell.csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_excell\obj\Debug\RecurrencecMethod_excell.csprojResolveAssemblyReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_excell\obj\Debug\RecurrencecMethod_excell.Form1.resources
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_excell\obj\Debug\RecurrencecMethod_excell.Properties.Resources.resources
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\RecurrencecMethod_excell\obj\Debug\RecurrencecMethod_excell.csproj.GenerateResource.Cache
