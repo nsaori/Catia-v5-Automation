@@ -30,33 +30,49 @@ namespace RecurrencecMethod_excell
           
         private void button1_Click(object sender, EventArgs e)
         {
-            //catia실행----------------------
-            INFITF.Application catia;
-            try
-            {
-                catia = (INFITF.Application)Marshal.GetActiveObject("CATIA.Application");
-            }
-            catch (Exception)
-            {
-                catia = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("CATIA.Applicationa"));
-                catia.Visible = true;
-            }
-            /////Product.Products.count
-            ProductDocument pdctDoc = (ProductDocument)catia.Documents.Add("Pruduct");
+            ////catia실행----------------------
+            //INFITF.Application catia;
+            //try
+            //{
+            //    catia = (INFITF.Application)Marshal.GetActiveObject("CATIA.Application");
+            //}
+            //catch (Exception)
+            //{
+            //    catia = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("CATIA.Applicationa"));
+            //    catia.Visible = true;
+            //}
+            ///////Product.Products.count
+            //ProductDocument pdctDoc = (ProductDocument)catia.Documents.Add("Pruduct");
             
 
             //excel ---------------------------
-            INFITF.Application excel;
+            Excel.Application excel;
             try
             {
-                excel = (INFITF.Application)Marshal.GetActiveObject("EXCEL.Application");
+                excel = (Excel.Application)Marshal.GetActiveObject("EXCEL.Application");
             }
             catch (Exception)
             {
-                excel = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("EXCEL.Application"));
+                excel = (Excel.Application)Activator.CreateInstance(Type.GetTypeFromProgID("EXCEL.Application"));
                 excel.Visible = true;
             }
-            Excel.Workbook wb = excel.;
+            Excel.Worksheet oSheet = excel.ActiveSheet;
+
+            oSheet.Cells[1, 1] = "ddd";
+        }
+
+        private void Re(Product Prd, Excel.Worksheet oSheet)
+        {
+            Products Prds = Prd.Products;
+
+
+
+            for (int i = 1; i <= Prds.Count; i++)
+            {
+                Re(Prds.Item(i), oSheet);
+
+            }
+
         }
     }
 }
