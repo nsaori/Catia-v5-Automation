@@ -1,4 +1,8 @@
-﻿using System;
+﻿//2161108 saori
+//ex05
+//1.line 선택. 2.색 변경, 3.line width변경
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +17,8 @@ namespace EX__05
 {
     public partial class Form1 : Form
     {
-        INFITF.Application Catia = null;
-        INFITF.Selection Sel = null;
+        INFITF.Application catia = null;
+        INFITF.Selection sel = null;
 
         public Form1()
         {
@@ -25,12 +29,12 @@ namespace EX__05
         {
             try
             {
-                Catia = (INFITF.Application)Marshal.GetActiveObject("CATIA.Application");
+                catia = (INFITF.Application)Marshal.GetActiveObject("CATIA.Application");
             }
             catch
             {
-                Catia = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("CATIA.Application"));
-                Catia.Visible = true;
+                catia = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("CATIA.Application"));
+                catia.Visible = true;
             }
         }
 

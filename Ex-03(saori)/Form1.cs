@@ -1,5 +1,6 @@
 ﻿//20161108 노다 사오리
 //EX-03
+//1.Geomatorical Set 선택 2.point수 세우기 3.line구리기
 
 using HybridShapeTypeLib;
 using MECMOD;
