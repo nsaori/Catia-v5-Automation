@@ -1,5 +1,8 @@
 ﻿//20161107 saori
 //selection 
+//.ActiveDocument ; 현재 docunebt
+//try ; errer가 날까말까할떄
+//if ; 물어보는 것 확인하는 것
 
 using System;
 using System.Collections.Generic;
@@ -18,7 +21,8 @@ namespace Selection
     public partial class Form1 : Form
     {
         INFITF.Application catia;
-        INFITF.Selection sel;
+        INFITF.Selection sel = null;
+        INFITF.AnyObject selob = null;
 
         public Form1()
         {
@@ -37,29 +41,102 @@ namespace Selection
                 catia.Visible =true;
             }
         }
-        //point만 선택한다
+        //point만 선택한다--------------------------------
         private void button1_Click(object sender, EventArgs e)
         {
-            object[] intype = { "Point" };
-            catia.ActiveDocument.Selection.SelectElement2(intype,"Select a Point",true);
+            selob = null;
 
-            sel = catia.ActiveDocument.Selection;
-            string name = textBox1.Text;
-           // HybridShapeTypeLib.Point p = (HybridShapeTypeLib.Point)sel.FindObject("Point");
-           // sel.set_Name(name);
-           
+            if (catia == null) {
+                MessageBox.Show("catia를 실행 해주세요.");
+                return;+
+            }
+            if (catia.ActiveDocument == null) {
+                MessageBox.Show("활성 document가 없습니다.");
+                return;
+            }
+            object[] intype = { "Point" };
+            //catia.ActiveDocument.Selection.SelectElement2(intype,"Select a Point",true); //esc  -> cancel
+
+            string status;
+            sel.Clear();
+            status = sel.SelectElement2(intype, "Select a Point", true);
+
+            if (status != "Normal" || sel.) {
+
+                MessageBox.Show("선택한 정보가 없습니다." );
+                return;
+            }
+
+            //textBox1.Text = sel.get_Name();
+            //sel = catia.ActiveDocument.Selection;
+            // string name = textBox1.Text;
+            // HybridShapeTypeLib.Point p = (HybridShapeTypeLib.Point)sel.FindObject("Point");
+            // sel.set_Name(name);
+
         }
-        //line만 선택
+        //line만 선택-------------------------------------------
         private void button2_Click(object sender, EventArgs e)
         {
+            if (catia == null)
+            {
+                MessageBox.Show("catia를 실행 해주세요.");
+                return;
+            }
+            if (catia.ActiveDocument == null)
+            {
+                MessageBox.Show("활성 document가 없습니다.");
+                return;
+            }
             object[] intype = { "Line" };
             catia.ActiveDocument.Selection.SelectElement2(intype, "Select a line", true);
         }
-        //plane만 선택
+        //plane만 선택-------------------------------------
         private void button3_Click(object sender, EventArgs e)
         {
+            if (catia == null)
+            {
+                MessageBox.Show("catia를 실행 해주세요.");
+                return;
+            }
+            if (catia.ActiveDocument == null)
+            {
+                MessageBox.Show("활성 document가 없습니다.");
+                return;
+            }
             object[] intype = { "Plane" };
             catia.ActiveDocument.Selection.SelectElement2(intype, "Select a plane", true);
+        }
+        //point remane
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (catia == null)
+            {
+                MessageBox.Show("catia를 실행 해주세요.");
+                return;
+            }
+            if (catia.ActiveDocument == null)
+            {
+                MessageBox.Show("활성 document가 없습니다.");
+                return;
+            }
+            try
+            {
+                sel = catia.ActiveDocument.Selection;
+                // HybridShapeTypeLib.Point p = (HybridShapeTypeLib.Point)sel.FindObject("Point");
+                INFITF.AnyObject p = sel.FindObject("Point");
+
+                textBox1.Text = p.get_Name();
+
+                //string name = textBox1.Text;
+
+    }
+            catch (Exception ex)
+            {
+                MessageBox.Show("선택한 정보가 없습니다.\n" + ex.Message);
+                return;
+            }
+            
+           // p.set_Name();
         }
     }
 }
