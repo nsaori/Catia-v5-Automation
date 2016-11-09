@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex04", "Ex04.csproj", "{D9F1E1FA-1828-42B6-8BB8-4CDCEF1D33E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EX.01(saori)", "..\EX.01(saori)\EX.01(saori).csproj", "{422E9308-EB71-4E0D-8257-7CB814722FC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D9F1E1FA-1828-42B6-8BB8-4CDCEF1D33E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9F1E1FA-1828-42B6-8BB8-4CDCEF1D33E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9F1E1FA-1828-42B6-8BB8-4CDCEF1D33E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9F1E1FA-1828-42B6-8BB8-4CDCEF1D33E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422E9308-EB71-4E0D-8257-7CB814722FC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422E9308-EB71-4E0D-8257-7CB814722FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422E9308-EB71-4E0D-8257-7CB814722FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422E9308-EB71-4E0D-8257-7CB814722FC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

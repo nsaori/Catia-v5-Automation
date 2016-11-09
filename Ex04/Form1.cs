@@ -1,6 +1,7 @@
 ﻿//20161108 saori
 //ex04
 //textboxdml의 좌표를 읽어오고 1.점표시 2.spline생성하기~~
+//최종 목표부터 보고 그리자--(그걸 그리기 위해 뭐가 필요한지 먼저 아는 것)
 
 using System;
 using System.Collections.Generic;
@@ -59,6 +60,7 @@ namespace Ex04
             Part prt = prtDoc.Part;
             HybridBodies hbdys = prt.HybridBodies;
             HybridBody hbdy = hbdys.Add();
+            hbdy.set_Name("saori");
             HybridShapeFactory hsFac = (HybridShapeFactory)prt.HybridShapeFactory;
 
             //string Line = textBox1.Text;
