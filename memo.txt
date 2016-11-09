@@ -1,0 +1,7 @@
+memo
+
+//programing - wireframe나 surface를 하는게 solid를 만드는 거보다 유리한다.
+
+
+//product - prt,prt,prt,prt
+//active ducument -> 최상위 documents
