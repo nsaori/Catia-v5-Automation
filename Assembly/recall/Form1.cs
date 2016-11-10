@@ -172,12 +172,13 @@ namespace recall
             vwr.Viewpoint3D.PutOrigin(invew);
 
             /*
-            INFITF.Camera3D camera = null;
+            INFITF.Camera3D cam = null;
             string name = "";
             for (int i = 1; i < 100; i++)
             {
-            camera = (INFITF.Camera3D)doc.Cameras.Item(i);
-            name = camera.get_Name();   //"* iso"
+                cam = (INFITF.Camera3D)doc.Cameras.Item(i);
+                cam.Viewpoint3D.GetOrigin(invew);       /////////
+                name = cam.get_Name();   //"* iso"
 
             }
             */
