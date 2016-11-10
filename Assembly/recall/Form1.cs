@@ -153,6 +153,17 @@ namespace recall
             vwr.PutBackgroundColor(clrArry);
 
             vwr.FullScreen = true;
+            //catia.StartCommand("Fit All In");
+            vwr.Reframe();  // same as abave
+            catia.StartCommand("specifications"); //catia의 명령어(view>command)는 거의 다할 수 있는데 내용을 건들 수 없다.(흿킹 x)
+            /*
+            //iso view로 변경하기---
+            INFITF.Camera3D camera = (INFITF.Camera3D)vwr.NewCamera();
+            object[] iso = {1,1,1 };
+            camera.Viewpoint3D.PutOrigin(iso);
+            //INFITF.Viewpoint3D v3 =  ;
+            //v3.PutOrigin(iso);
+            */
 
             vwr.Activate();
             //vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, @"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\capture\img.jpg");
@@ -165,12 +176,13 @@ namespace recall
             // ws.Shapes.AddPicture(@"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\capture\img.jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
             ws.Shapes.AddPicture(fullPath + cellrowNum+".jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
 
-            vwr.PutBackgroundColor(oldClr);
+            catia.StartCommand("specifications");
+            vwr.PutBackgroundColor(oldClr);  
             vwr.FullScreen = false;
 
             if (level != 0)
             {
-                w.Close();
+                tDoc.Close();
             }
 
             //propaties.designer-----------
@@ -179,11 +191,13 @@ namespace recall
             try
             {
                 designer = prd.Parameters.Item("designer").ValueAsString();
+                //NavigatorTypeLib.Para =  prd.Parameters.GetItem("designer").;
             }
             catch (Exception)
             {
                 designer = "";
             }
+            
 
             ws.Cells[cellrowNum, 6] = designer;
 
