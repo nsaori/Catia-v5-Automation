@@ -1,0 +1,28 @@
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\bin\Debug\Ex.01.exe.config
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Interop.DRAFTINGITF.dll
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Interop.HybridShapeTypeLib.dll
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Interop.INFITF.dll
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Interop.KnowledgewareTypeLib.dll
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Interop.MECMOD.dll
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Interop.PARTITF.dll
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Interop.ProductStructureTypeLib.dll
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Ex.01.csproj.ResolveComReference.cache
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Ex._01.Form1.resources
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Ex._01.Properties.Resources.resources
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Ex.01.csproj.GenerateResource.Cache
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\bin\Debug\Ex.01.exe
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\bin\Debug\Ex.01.pdb
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Ex.01.exe
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Ex.01.pdb
+c:\users\517-28\documents\visual studio 2015\Projects\Ex.01\obj\Debug\Ex.01.csprojResolveAssemblyReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\bin\Debug\Ex.01.exe.config
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Interop.DRAFTINGITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Interop.HybridShapeTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Interop.PARTITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Ex.01.csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Ex.01.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Ex.01\obj\Debug\Ex.01.pdb

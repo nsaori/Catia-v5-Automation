@@ -1,0 +1,16 @@
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\bin\Debug\recall.exe.config
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\bin\Debug\recall.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\bin\Debug\recall.pdb
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\recall.csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\recall.Form1.resources
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\recall.Properties.Resources.resources
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\recall.csproj.GenerateResource.Cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\recall.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\recall.pdb
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\Interop.NavigatorTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\Interop.SPATypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\obj\Debug\recall.csprojResolveAssemblyReference.cache

@@ -1,0 +1,15 @@
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\bin\Debug\EX.01(saori).exe.config
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\Interop.HybridShapeTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\EX.01(saori).csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\bin\Debug\EX.01(saori).exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\bin\Debug\EX.01(saori).pdb
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\EX.01(saori).csprojResolveAssemblyReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\EX._01_saori_.Form1.resources
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\EX._01_saori_.Properties.Resources.resources
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\EX.01(saori).csproj.GenerateResource.Cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\EX.01(saori).exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\EX.01(saori)\obj\Debug\EX.01(saori).pdb
