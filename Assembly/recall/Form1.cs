@@ -104,13 +104,16 @@ namespace recall
                 MessageBox.Show("pleace run a catia");
                 return;
             }
-            if (prdDoc == null)
+            try
             {
-                MessageBox.Show("pleace open a productDocument");
-                return;
+                prdDoc = (ProductDocument)catia.ActiveDocument;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("please open a document");
             }
 
-            prdDoc = (ProductDocument)catia.ActiveDocument;
+            //prdDoc = (ProductDocument)catia.ActiveDocument;
             Product prd = prdDoc.Product;
             re(prd);
         }
@@ -120,22 +123,25 @@ namespace recall
         {
             //SPAWorkbench spawb = prdDoc.GetWorkbench;
             //EXCEL.PictureFormat
+            INFITF.Document doc = (INFITF.Document)prd.ReferenceProduct.Parent;
+            string fullPath = doc.FullName;
+            Products pds = prd.Products;
+            
 
             cellrowNum++;
             ws.Cells[cellrowNum, 1] = level; //level 
             ws.Cells[cellrowNum, 2] = prd.get_PartNumber();
-            ws.Cells[cellrowNum, 3] = prdDoc.Path;//저장경로
+            ws.Cells[cellrowNum, 3] = fullPath;//저장경로
             ws.Cells[cellrowNum, 4] = prd.Analyze.Volume;//구피;volume
                                                          //imige capture
 
-            //product열고 캡처한다.
+            //product열고 캡처한다.----------------------
             INFITF.Document tDoc = null;
 
             if (level != 0) //level 0일땐 열지 않아도 된다.
             {
-                tDoc = catia.Documents.Open(prdDoc.Path);
+                tDoc = catia.Documents.Open(fullPath);
             }
-            //prdDoc = (ProductDocument)prd.ReferenceProduct;
             
             INFITF.Window w =catia.ActiveWindow;
             INFITF.Viewer vwr = w.ActiveViewer;
@@ -150,25 +156,36 @@ namespace recall
 
             vwr.Activate();
             //vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, @"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\capture\img.jpg");
-            vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, prdDoc.Path +".jpg");
+            vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, fullPath+ cellrowNum + ".jpg");
 
             //wss = ws;
             //wss.Cells[1,1].Pi  //.Pictures.Insert(@"C:\Windows\System32\@BackgroundAccessToastIcon.png");
             // AddPicture(string Filename, Office.Core.MsoTriState LinkToFile, Office.Core.MsoTriState SaveWithDocument, float Left, float Top, float Width, float Height);
             EXCEL.Range ImgRane = ws.Cells[cellrowNum, 5];
             // ws.Shapes.AddPicture(@"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\capture\img.jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
-            ws.Shapes.AddPicture(prdDoc.Path + ".jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
-
-            Products pds = prd.Products;
+            ws.Shapes.AddPicture(fullPath + cellrowNum+".jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
 
             vwr.PutBackgroundColor(oldClr);
             vwr.FullScreen = false;
 
-            if(level != 0)
+            if (level != 0)
             {
                 w.Close();
             }
-            
+
+            //propaties.designer-----------
+            // ws.Cells[cellrowNum, 6] =prd.UserRefProperties
+            string designer = "";
+            try
+            {
+                designer = prd.Parameters.Item("designer").ValueAsString();
+            }
+            catch (Exception)
+            {
+                designer = "";
+            }
+
+            ws.Cells[cellrowNum, 6] = designer;
 
             for (int i = 1; i <= pds.Count; i++) //1부터이어야 된다. i <= pds.Count(=있어야 한다)
             {
