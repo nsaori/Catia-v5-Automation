@@ -156,19 +156,25 @@ namespace recall
             //catia.StartCommand("Fit All In");
             vwr.Reframe();  // same as abave
             catia.StartCommand("specifications"); //catia의 명령어(view>command)는 거의 다할 수 있는데 내용을 건들 수 없다.(흿킹 x)
-            /*
+             /*
             //iso view로 변경하기---
-            INFITF.Camera3D camera = (INFITF.Camera3D)vwr.NewCamera();
-            object[] iso = {1,1,1 };
-            camera.Viewpoint3D.PutOrigin(iso);
-            //INFITF.Viewpoint3D v3 =  ;
+            INFITF.Camera3D camera = (INFITF.Camera3D)doc.Cameras.Item("*iso");
+            object[] invew = new object[3];
+            camera.Viewpoint3D.GetOrigin(invew);
+            //object[] iso = {1,1,1 };
+            //camera.Viewpoint3D.PutOrigin(iso);
             //v3.PutOrigin(iso);
+            /////
+            INFITF.Viewer3D v3 = (INFITF.Viewer3D)vwr;
+            //INFITF.Viewpoint3D v3 = v3.Viewpoint3D;
+            //object[] iso = { 1, 1, 1 };
+            v3.Viewpoint3D.PutOrigin(invew);
             */
 
             vwr.Activate();
             //vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, @"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\capture\img.jpg");
             vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, fullPath+ cellrowNum + ".jpg");
-
+            
             //wss = ws;
             //wss.Cells[1,1].Pi  //.Pictures.Insert(@"C:\Windows\System32\@BackgroundAccessToastIcon.png");
             // AddPicture(string Filename, Office.Core.MsoTriState LinkToFile, Office.Core.MsoTriState SaveWithDocument, float Left, float Top, float Width, float Height);
