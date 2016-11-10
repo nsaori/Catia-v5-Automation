@@ -117,7 +117,7 @@ namespace recall
             Product prd = prdDoc.Product;
             re(prd);
         }
-       
+
 
         private void re(Product prd)
         {
@@ -126,7 +126,7 @@ namespace recall
             INFITF.Document doc = (INFITF.Document)prd.ReferenceProduct.Parent;
             string fullPath = doc.FullName;
             Products pds = prd.Products;
-            
+
 
             cellrowNum++;
             ws.Cells[cellrowNum, 1] = level; //level 
@@ -142,48 +142,59 @@ namespace recall
             {
                 tDoc = catia.Documents.Open(fullPath);
             }
-            
-            INFITF.Window w =catia.ActiveWindow;
-            INFITF.Viewer vwr = w.ActiveViewer;
+
+            INFITF.Window w = catia.ActiveWindow;
+            //INFITF.Viewer vwr = w.ActiveViewer;
+            INFITF.Viewer3D vwr = (INFITF.Viewer3D)w.ActiveViewer;
 
             object[] oldClr = new object[3];
             vwr.GetBackgroundColor(oldClr);
-            
-            object[] clrArry= { 1, 1, 1 };
+
+            object[] clrArry = { 1, 1, 1 };
             vwr.PutBackgroundColor(clrArry);
 
             vwr.FullScreen = true;
             //catia.StartCommand("Fit All In");
             vwr.Reframe();  // same as abave
             catia.StartCommand("specifications"); //catia의 명령어(view>command)는 거의 다할 수 있는데 내용을 건들 수 없다.(흿킹 x)
-             /*
+
             //iso view로 변경하기---
-            INFITF.Camera3D camera = (INFITF.Camera3D)doc.Cameras.Item("*iso");
+            INFITF.Camera3D camera = (INFITF.Camera3D)doc.Cameras.Item("* iso");
             object[] invew = new object[3];
             camera.Viewpoint3D.GetOrigin(invew);
             //object[] iso = {1,1,1 };
             //camera.Viewpoint3D.PutOrigin(iso);
             //v3.PutOrigin(iso);
             /////
-            INFITF.Viewer3D v3 = (INFITF.Viewer3D)vwr;
+           // INFITF.Viewer3D v3 = (INFITF.Viewer3D)vwr;
             //INFITF.Viewpoint3D v3 = v3.Viewpoint3D;
             //object[] iso = { 1, 1, 1 };
-            v3.Viewpoint3D.PutOrigin(invew);
+            vwr.Viewpoint3D.PutOrigin(invew);
+
+            /*
+            INFITF.Camera3D camera = null;
+            string name = "";
+            for (int i = 1; i < 100; i++)
+            {
+            camera = (INFITF.Camera3D)doc.Cameras.Item(i);
+            name = camera.get_Name();   //"* iso"
+
+            }
             */
 
             vwr.Activate();
             //vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, @"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\capture\img.jpg");
-            vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, fullPath+ cellrowNum + ".jpg");
-            
+            vwr.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, fullPath + cellrowNum + ".jpg");
+
             //wss = ws;
             //wss.Cells[1,1].Pi  //.Pictures.Insert(@"C:\Windows\System32\@BackgroundAccessToastIcon.png");
             // AddPicture(string Filename, Office.Core.MsoTriState LinkToFile, Office.Core.MsoTriState SaveWithDocument, float Left, float Top, float Width, float Height);
             EXCEL.Range ImgRane = ws.Cells[cellrowNum, 5];
             // ws.Shapes.AddPicture(@"C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Assembly\recall\capture\img.jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
-            ws.Shapes.AddPicture(fullPath + cellrowNum+".jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
+            ws.Shapes.AddPicture(fullPath + cellrowNum + ".jpg", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, ImgRane.Left + 1, ImgRane.Top + 1, ImgRane.Width - 2.5, ImgRane.Height - 3);
 
             catia.StartCommand("specifications");
-            vwr.PutBackgroundColor(oldClr);  
+            vwr.PutBackgroundColor(oldClr);
             vwr.FullScreen = false;
 
             if (level != 0)
@@ -203,7 +214,7 @@ namespace recall
             {
                 designer = "";
             }
-            
+
 
             ws.Cells[cellrowNum, 6] = designer;
 
