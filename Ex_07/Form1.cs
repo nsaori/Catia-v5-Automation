@@ -103,9 +103,9 @@ namespace Ex_07
             //create a part to past
             MECMOD.PartDocument p = (MECMOD.PartDocument)Catia.Documents.Add("Part");
             //p.Activate();
-            //INFITF.Selection s = Sel; //복사한 파트에 past된다...
+            INFITF.Selection s = null; //복사한 파트에 past된다...
             //Sel.Paste();
-            //s.Paste();
+            s.Paste();
 
 
             p.Part.Update();
