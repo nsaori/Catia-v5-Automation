@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,6 +52,7 @@ namespace Ex_07
             }
 
             // Point 선택 기능 실행
+            /*
             INFITF.Selection Sel = null;
             Sel = Catia.ActiveDocument.Selection;
 
@@ -71,6 +73,16 @@ namespace Ex_07
                 label1.Text = "선택";
                 return;
             }
+            */
+            //INFITF.SelectionSets sels = (INFITF.SelectionSets)Catia.ActiveDocument.Selection;
+            //ArrayList selsAlly = new ArrayList();
+
+            INFITF.Selections sels = ;
+            object[] arr = new object[100];
+            sels.GetListOfSelectionSet(arr);
+            Catia.ActiveDocument.Selection.Copy();
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,3 +91,4 @@ namespace Ex_07
         }
     }
 }
+ 
