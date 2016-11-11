@@ -171,14 +171,7 @@ namespace recall
             object[] invew = new object[3];
             //camera.Viewpoint3D.GetOrigin(invew);
             vwr.Viewpoint3D = camera.Viewpoint3D;
-            //object[] iso = {1,1,1 };
-            //camera.Viewpoint3D.PutOrigin(iso);
-            //v3.PutOrigin(iso);
-            /////
-            // INFITF.Viewer3D v3 = (INFITF.Viewer3D)vwr;
-            //INFITF.Viewpoint3D v3 = v3.Viewpoint3D;
-            //object[] iso = { 1, 1, 1 };
-            //vwr.Viewpoint3D.PutOrigin(invew);
+          
 
             /*
             INFITF.Camera3D cam = null;
