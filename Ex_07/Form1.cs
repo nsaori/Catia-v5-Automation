@@ -73,57 +73,23 @@ namespace Ex_07
                 doc = Catia.Documents.Add("Part");
             }
 
-            // Point 선택 기능 실행
-           // /*
-            //INFITF.Selection Sel = null;
-            Sel = Catia.ActiveDocument.Selection;
-            /*
-            Object[] InputObjectType = { "Plane", "Line" , "Point"};
-            string Status;
-            Sel.Clear();
-            Status = Sel.SelectElement2(InputObjectType, "Select a Elements", false);
-            
-            //Catia.ActiveDocument.Selection.Copy();
-            Sel.Copy();
-            if (Status != "Normal")
-            {
-                label1.Text = "취소됨";
-                return;
-            }
+            Sel = Catia.ActiveDocument.Selection;   //복수 선택 가능...?
+                                                    // MessageBox.Show(Sel.Count +" , " + Sel.Count2 +" , " + Sel.Item(1).get_Name() + " , " + Sel.Item(3).get_Name() + " , " + Sel.Item(3).get_Name()/* + " , " + Sel.Item(4).get_Name()*/);
+                                                    //INFITF.Selection sels = null;
+                                                    //sels.Add
 
-            if (Sel.Count < 1)
+            //List<INFITF.AnyObject> list = new List<INFITF.AnyObject>();
+           /* for (int i = 1; i <= Sel.Count; i++)
             {
-                label1.Text = "선택";
-                return;
+                //list.Add((INFITF.AnyObject)Sel.Item(i).Value);
+                INFITF.Selection s = null;
+                INFITF.AnyObject a =(INFITF.AnyObject)Sel.Item(i).Value;
+                s.Add(a);
+                s.Copy();
+                s.Paste();
             }
             */
-            //INFITF.SelectionSets sels = (INFITF.SelectionSets)Catia.ActiveDocument.Selection;
-            //ArrayList selsAlly = new ArrayList();
 
-            //INFITF.Selections sels = ;
-            //object[] arr = new object[100];
-            //sels.GetListOfSelectionSet(arr);
-            //Catia.ActiveDocument.Selection.Copy();
-
-            /*
-            INFITF.Selection sel = Catia.ActiveDocument.Selection;
-            INFITF.Selection sels = null;
-            INFITF.AnyObject[] selObj;
-            INFITF.SelectedElement sele = null;
-            ///*
-            int i = 0;
-            while ((sel = Catia.ActiveDocument.Selection) != null)
-            {
-                i++;
-                // selObj.a
-                sels.Item(i);
-            }
-            for (int i = 1;i<=sel.Count2 ; i++)
-            {
-                
-            }
-
-            */
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -131,8 +97,7 @@ namespace Ex_07
             //Catia.ActiveDocument.Selection.Paste();
             Sel.Paste();
 
-            
+
         }
     }
 }
- 
