@@ -78,18 +78,8 @@ namespace Ex_07
                                                     //INFITF.Selection sels = null;
                                                     //sels.Add
 
-            //List<INFITF.AnyObject> list = new List<INFITF.AnyObject>();
-           /* for (int i = 1; i <= Sel.Count; i++)
-            {
-                //list.Add((INFITF.AnyObject)Sel.Item(i).Value);
-                INFITF.Selection s = null;
-                INFITF.AnyObject a =(INFITF.AnyObject)Sel.Item(i).Value;
-                s.Add(a);
-                s.Copy();
-                s.Paste();
-            }
-            */
 
+            Sel.Copy();
         }
 
         private void button2_Click(object sender, EventArgs e)
