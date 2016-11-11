@@ -80,35 +80,35 @@ namespace Ex_07
             {
                 MessageBox.Show("copy할 요소를 선택해주세요");
                 return;
-            }  //복수 선택 가능...?
-                                                    // MessageBox.Show(Sel.Count +" , " + Sel.Count2 +" , " + Sel.Item(1).get_Name() + " , " + Sel.Item(3).get_Name() + " , " + Sel.Item(3).get_Name()/* + " , " + Sel.Item(4).get_Name()*/);
-                                                    //INFITF.Selection sels = null;
-                                                    //sels.Add
+            }  
+               // MessageBox.Show(Sel.Count +" , " + Sel.Count2 +" , " + Sel.Item(1).get_Name() + " , " + Sel.Item(3).get_Name() + " , " + Sel.Item(3).get_Name()/* + " , " + Sel.Item(4).get_Name()*/);
 
-            Sel.Copy();
-
-            MessageBox.Show(Sel.Count + "개 복사 되엇습니다.");
+            try
+            {
+                Sel.Copy();
+                MessageBox.Show(Sel.Count + "개 복사 되엇습니다.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("copy할 요소를 선택해주세요");
+                return;
+            }  
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*
-            // create Gs
-            MECMOD.HybridBody hbdy = doc.Part.HybridBodies.Add();
-            INFITF.Selection s = null;
-            s.Clear();
-            s.Add(hbdy);
-            */
+            try
+            {
+                Sel.Paste();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("paste할 요소가 없습니다");
+                return;
+            }
 
-            //create a part to past
-            MECMOD.PartDocument p = (MECMOD.PartDocument)Catia.Documents.Add("Part");
-            //p.Activate();
-            INFITF.Selection s = null; //복사한 파트에 past된다...
-            //Sel.Paste();
-            s.Paste();
-
-
-            p.Part.Update();
+            doc.Part.Update();
         }
     }
 }
