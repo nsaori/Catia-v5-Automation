@@ -15,7 +15,7 @@ namespace Ex_07
     public partial class Form1 : Form
     {
         INFITF.Application Catia = null;
-        INFITF.Document doc = null;
+        MECMOD.PartDocument doc = null;
         INFITF.Selection Sel = null;
 
 
@@ -38,7 +38,7 @@ namespace Ex_07
 
             try
             {
-                doc = Catia.ActiveDocument;
+                doc = (MECMOD.PartDocument)Catia.ActiveDocument;
             }
             catch (Exception)
             {
@@ -51,8 +51,7 @@ namespace Ex_07
             // 카티아가 실행중?
             if (Catia == null)
             {
-                //MessageBox.Show("Please run CATIA");
-                label1.Text = "Please run CATIA";
+                MessageBox.Show("Please run CATIA");
                 return;
             }
 
@@ -66,28 +65,50 @@ namespace Ex_07
             */
             try
             {
-                doc = Catia.ActiveDocument;
+                doc = (MECMOD.PartDocument)Catia.ActiveDocument;
             }
             catch (Exception)
             {
-                doc = Catia.Documents.Add("Part");
+                doc = (MECMOD.PartDocument)Catia.Documents.Add("Part");
             }
 
-            Sel = Catia.ActiveDocument.Selection;   //복수 선택 가능...?
+            try
+            {
+                Sel = Catia.ActiveDocument.Selection;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("copy할 요소를 선택해주세요");
+                return;
+            }  //복수 선택 가능...?
                                                     // MessageBox.Show(Sel.Count +" , " + Sel.Count2 +" , " + Sel.Item(1).get_Name() + " , " + Sel.Item(3).get_Name() + " , " + Sel.Item(3).get_Name()/* + " , " + Sel.Item(4).get_Name()*/);
                                                     //INFITF.Selection sels = null;
                                                     //sels.Add
 
-
             Sel.Copy();
+
+            MessageBox.Show(Sel.Count + "개 복사 되엇습니다.");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Catia.ActiveDocument.Selection.Paste();
-            Sel.Paste();
+            /*
+            // create Gs
+            MECMOD.HybridBody hbdy = doc.Part.HybridBodies.Add();
+            INFITF.Selection s = null;
+            s.Clear();
+            s.Add(hbdy);
+            */
+
+            //create a part to past
+            MECMOD.PartDocument p = (MECMOD.PartDocument)Catia.Documents.Add("Part");
+            //p.Activate();
+            //INFITF.Selection s = Sel; //복사한 파트에 past된다...
+            //Sel.Paste();
+            //s.Paste();
 
 
+            p.Part.Update();
         }
     }
 }
