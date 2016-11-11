@@ -40,8 +40,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(397, 47);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "C:\\Users\\517-11\\Desktop\\saori\\Automation\\Catia-v5-Automation\\Assembly\\recall\\re.x" +
-    "lsx";
+            this.textBox1.Text = "C:\\Users\\517-12\\Desktop\\ns\\Catia-v5-Automation\\Assembly\\recall\\re.xlsx";
             // 
             // button1
             // 

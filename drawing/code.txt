@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using INFITF;
+using System.Runtime.InteropServices;
+using PARTITF;
+
+namespace WindowsFormsApplication55
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        public INFITF.Application Catia { get; private set; }
+       
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Catia = (INFITF.Application)Marshal.GetActiveObject("CATIA.Application");
+            }
+            catch
+            {
+                Catia = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("CATIA.Application"));
+                Catia.Visible = true;
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            
+
+        
+
+            DRAFTINGITF.DrawingDocument DrwDoc = (DRAFTINGITF.DrawingDocument)Catia.ActiveDocument;
+            DRAFTINGITF.DrawingRoot DrwRoot = DrwDoc.DrawingRoot;
+            DRAFTINGITF.DrawingView DrwView = DrwRoot.ActiveSheet.Views.Item(DrwRoot.ActiveSheet.Views.Count);
+            DRAFTINGITF.DrawingViewGenerativeBehavior DrwGenBeh = DrwView.GenerativeBehavior;
+            double X1, Y1, Z1, X2, Y2, Z2;
+            DrwGenBeh.GetProjectionPlane(out X1, out Y1, out Z1, out X2, out Y2, out Z2);
+
+            //3D 위치 값
+            double X = -37.935, Y = 96.8, Z = 104.207;
+
+            //결과 값
+            double COS_ALPHA = 0, VW_H = 0, VW_V = 0;
+
+            //계산과정
+            COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) / ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X ,2) + Math.Pow(Y , 2) + Math.Pow(Z , 2)));
+            VW_H = Math.Sqrt(X * X + Y * Y + Z * Z) * COS_ALPHA;
+
+            COS_ALPHA = (X * X2 + Y * Y2 + Z * Z2) / ((Math.Pow(X2 ,2) + Math.Pow(Y2 , 2) + Math.Pow(Z2 ,2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y , 2) + Math.Pow(Z , 2)));
+            VW_V = Math.Sqrt(Math.Pow(X , 2) + Math.Pow(Y , 2) + Math.Pow(Z , 2)) * COS_ALPHA;
+
+            ProductStructureTypeLib.Product Prd = (ProductStructureTypeLib.Product)DrwGenBeh.Document;
+            MECMOD.PartDocument PrtDoc = (MECMOD.PartDocument)Prd.ReferenceProduct.Parent;
+            MECMOD.Part Prt = PrtDoc.Part;
+
+            MECMOD.Body Bdy = Prt.MainBody;
+            MECMOD.Shapes Shps = Bdy.Shapes;

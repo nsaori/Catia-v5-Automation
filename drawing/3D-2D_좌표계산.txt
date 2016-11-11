@@ -1,0 +1,11 @@
+//3D 위치 값
+double X = 0, Y = 0, Z = 0;            
+
+//결과 값
+double COS_ALPHA = 0, VW_H = 0, VW_V = 0;
+
+//계산과정
+COS_ALPHA = (X  X1 + Y  Y1 + Z  Z1)  ((X1 ^ 2 + Y1 ^ 2 + Z1 ^ 2)  Math.Sqrt(X ^ 2 + Y ^ 2 + Z ^ 2));
+VW_H = Math.Sqrt(X ^ 2 + Y ^ 2 + Z ^ 2)  COS_ALPHA;
+COS_ALPHA = (X  X2 + Y  Y2 + Z  Z2)  ((X2 ^ 2 + Y2 ^ 2 + Z2 ^ 2)  Math.Sqrt(X ^ 2 + Y ^ 2 + Z ^ 2));
+vW_V = Math.Sqrt(X ^ 2 + Y ^ 2 + Z ^ 2)  COS_ALPHA;

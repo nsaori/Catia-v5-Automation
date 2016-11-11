@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using INFITF;
-using PARTITF;
 
 namespace WindowsFormsApplication45
 {
@@ -17,13 +16,15 @@ namespace WindowsFormsApplication45
 
     public partial class Form1 : Form
     {
-        INFITF.Application Catia = null;
-        int Level = 0;
-
         public Form1()
         {
             InitializeComponent();
         }
+        INFITF.Application Catia = null;
+        int Level = 0;
+
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -36,7 +37,6 @@ namespace WindowsFormsApplication45
             {
                 Catia = (INFITF.Application)Activator.CreateInstance(Type.GetTypeFromProgID("CATIA.Application"));
                 Catia.Visible = true;
-
             }
 
         }
@@ -46,7 +46,6 @@ namespace WindowsFormsApplication45
             ProductStructureTypeLib.ProductDocument PrdDoc;
             PrdDoc = (ProductStructureTypeLib.ProductDocument)Catia.ActiveDocument;
             GetSubPrd(PrdDoc.Product);
-
         }
 
         private void GetSubPrd(ProductStructureTypeLib.Product Prd)
@@ -59,8 +58,6 @@ namespace WindowsFormsApplication45
             SPAWB = (SPATypeLib.SPAWorkbench)Doc.GetWorkbench("SPAWorkbench");
             SPATypeLib.Measurable Mea = SPAWB.GetMeasurable((INFITF.Reference)Prd);
             double Vol;
-
-          
             try
             {
                 Vol = Mea.Volume;
@@ -70,42 +67,25 @@ namespace WindowsFormsApplication45
                 Vol = 0;
             }
 
-            INFITF.Document tdoc = null;
-            if (Level != 0)
-            {
-                tdoc = Catia.Documents.Open(FullPath);
-            }
-            INFITF.Viewer Vw = Catia.ActiveWindow.ActiveViewer;
-            object[] oldColor = new object[3];
-            Vw.GetBackgroundColor(oldColor);
 
-            object[] newColor = { 1, 1, 1 };
-            Vw.PutBackgroundColor(newColor);
+            textBox1.Text +=Level.ToString()+ "."+PrtNum + "." + FullPath + "\r\n";
 
-            Vw.CaptureToFile(INFITF.CatCaptureFormat.catCaptureFormatJPEG, FullPath + ".jpg");
 
-            Vw.PutBackgroundColor(oldColor);
-
-            if (Level != 0)
-            {
-                tdoc.Close();
-            }
-
-            textBox1.Text += Level.ToString() + "." + PrtNum + "." + FullPath + "." + Vol.ToString()+"," +FullPath+".jpg"+"\r\n";
-            
             for (int i = 1; i <= Prd.Products.Count; i++)
             {
                 ProductStructureTypeLib.Product tPrd = Prd.Products.Item(i);
                 Level++;
                 GetSubPrd(tPrd);
                 Level--;
-                
+               
             }
 
         }
+
+        
+
+
+
     }
 }
-
-
-
    

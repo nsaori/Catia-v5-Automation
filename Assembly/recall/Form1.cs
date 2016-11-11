@@ -1,6 +1,7 @@
 ﻿//20161109 saori
 //ex06  재귀호출 -> excel에 저장(level,)
 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,11 +89,18 @@ namespace recall
         //record------------------------------------------------
         private void button2_Click(object sender, EventArgs e)
         {
-            if (excel == null)
+            try
             {
-                MessageBox.Show("excel가 열러 있지 안습니다.");
-                return;
+                excel = (EXCEL.Application)Marshal.GetActiveObject("EXCEL.Application");
+                excel.Visible = true;
             }
+            catch (Exception)
+            {
+                excel = (EXCEL.Application)Activator.CreateInstance(Type.GetTypeFromProgID("EXCEL.Application"));
+                excel.Visible = true;
+            }
+            wb = excel.Workbooks.Add();
+            ws = excel.ActiveSheet;
             if (wb == null)
             {
                 MessageBox.Show("excel를 열려주세요");
@@ -161,15 +169,16 @@ namespace recall
             //iso view로 변경하기---
             INFITF.Camera3D camera = (INFITF.Camera3D)doc.Cameras.Item("* iso");
             object[] invew = new object[3];
-            camera.Viewpoint3D.GetOrigin(invew);
+            //camera.Viewpoint3D.GetOrigin(invew);
+            vwr.Viewpoint3D = camera.Viewpoint3D;
             //object[] iso = {1,1,1 };
             //camera.Viewpoint3D.PutOrigin(iso);
             //v3.PutOrigin(iso);
             /////
-           // INFITF.Viewer3D v3 = (INFITF.Viewer3D)vwr;
+            // INFITF.Viewer3D v3 = (INFITF.Viewer3D)vwr;
             //INFITF.Viewpoint3D v3 = v3.Viewpoint3D;
             //object[] iso = { 1, 1, 1 };
-            vwr.Viewpoint3D.PutOrigin(invew);
+            //vwr.Viewpoint3D.PutOrigin(invew);
 
             /*
             INFITF.Camera3D cam = null;
