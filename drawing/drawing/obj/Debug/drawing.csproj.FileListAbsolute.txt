@@ -36,3 +36,16 @@ C:\Users\517-12\Desktop\ns\Catia-v5-Automation\drawing\drawing\obj\Debug\drawing
 C:\Users\517-12\Desktop\ns\Catia-v5-Automation\drawing\drawing\obj\Debug\drawing.Form1.resources
 C:\Users\517-12\Desktop\ns\Catia-v5-Automation\drawing\drawing\obj\Debug\drawing.Properties.Resources.resources
 C:\Users\517-12\Desktop\ns\Catia-v5-Automation\drawing\drawing\obj\Debug\drawing.csproj.GenerateResource.Cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\bin\Debug\drawing.exe.config
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.DRAFTINGITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.GenKwe.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.MANUFACTURING.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.PARTITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.PROCESSITF.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\drawing.csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\drawing.exe
+C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\drawing\drawing\obj\Debug\drawing.pdb

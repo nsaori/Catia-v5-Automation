@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyGS", "CopyGS\CopyGS.csproj", "{73E35600-50A0-466A-905F-26758489ABA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex_07", "..\..\Ex_07\Ex_07.csproj", "{97C9894E-4B9E-4C69-8800-6C12E2F8D3CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex_07", "..\Ex_07\Ex_07.csproj", "{97C9894E-4B9E-4C69-8800-6C12E2F8D3CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
