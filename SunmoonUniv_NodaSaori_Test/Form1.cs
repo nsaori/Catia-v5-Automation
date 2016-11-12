@@ -85,8 +85,8 @@ namespace SunmoonUniv_NodaSaori_Test
             pt3 = hfac.AddNewPointCoord(90, -250, 60);
 
             pt1.set_Name("PT-1");
-            pt1.set_Name("PT-2");
-            pt1.set_Name("PT-3");
+            pt2.set_Name("PT-2");
+            pt3.set_Name("PT-3");
 
             hbdy.AppendHybridShape(pt1);
             hbdy.AppendHybridShape(pt2);
@@ -142,12 +142,11 @@ namespace SunmoonUniv_NodaSaori_Test
             }
             DRAFTINGITF.DrawingViewGenerativeBehavior DrwGenBeh = DrwView.GenerativeBehavior;
 
-            //7.point txt, leader생성
-            CreateTxt(DrwGenBeh, pt1, DrwView);
-            CreateTxt(DrwGenBeh, pt2, DrwView);
-            CreateTxt(DrwGenBeh, pt3, DrwView);
+            ////7.point txt, leader생성
+            //CreateTxt(DrwGenBeh, pt1, DrwView);
+            //CreateTxt(DrwGenBeh, pt2, DrwView);
+            //CreateTxt(DrwGenBeh, pt3, DrwView);
 
-            /*
             double X1, Y1, Z1, X2, Y2, Z2;
             DrwGenBeh.GetProjectionPlane(out X1, out Y1, out Z1, out X2, out Y2, out Z2);
 
@@ -159,7 +158,10 @@ namespace SunmoonUniv_NodaSaori_Test
             MECMOD.Shapes Shps = Bdy.Shapes;
 
             //7.point txt, leader생성
-            CreateTxt(DrwGenBeh,pt1, DrwView);
+           // CreateTxt(DrwGenBeh, X1, Y1, Z1, X2, Y2, Z2, pt1, DrwView);
+           // CreateTxt(X1, Y1, Z1, X2, Y2, Z2, pt2, DrwView);
+           // CreateTxt(X1, Y1, Z1, X2, Y2, Z2, pt3, DrwView);
+            
             object[] ap1 = new object[3];
             object[] ap2 = new object[3];
             object[] ap3 = new object[3];
@@ -188,7 +190,7 @@ namespace SunmoonUniv_NodaSaori_Test
             txt.SetFontSize(0, 0, 12);
 
             DRAFTINGITF.DrawingLeader FDleadr = txt.Leaders.Add(VW_H, VW_V);
-            */
+            
 
             drwDoc.Update();
 
@@ -196,10 +198,13 @@ namespace SunmoonUniv_NodaSaori_Test
             drwDoc.Save();
         }
 
-        private void CreateTxt(DrawingViewGenerativeBehavior drwGenBeh, HybridShapePointCoord pt, DrawingView drwView)
+        /*
+        private void CreateTxt(DRAFTINGITF.DrawingViewGenerativeBehavior drwGenBeh, double X1, double Y1, double Z1, double X2, double Y2, double Z2, HybridShapePointCoord pt, DrawingView drwView)
         {
+            /*
             double X1, Y1, Z1, X2, Y2, Z2;
             drwGenBeh.GetProjectionPlane(out X1, out Y1, out Z1, out X2, out Y2, out Z2);
+            
 
             ProductStructureTypeLib.Product Prd = (ProductStructureTypeLib.Product)drwGenBeh.Document;
             MECMOD.PartDocument PrtDoc = (MECMOD.PartDocument)Prd.ReferenceProduct.Parent;
@@ -208,11 +213,8 @@ namespace SunmoonUniv_NodaSaori_Test
             MECMOD.Body Bdy = Prt.MainBody;
             MECMOD.Shapes Shps = Bdy.Shapes;
 
-            //7.point txt, leader생성
-            CreateTxt(drwGenBeh, pt, drwView);
             object[] ap = new object[3];
-           
-            pt1.GetCoordinates(ap);
+            pt.GetCoordinates(ap);
 
             double X = (double)ap[0];
             double Y = (double)ap[1];
@@ -236,5 +238,6 @@ namespace SunmoonUniv_NodaSaori_Test
             DRAFTINGITF.DrawingLeader FDleadr = txt.Leaders.Add(VW_H, VW_V);
 
         }
+    */
     }
 }
