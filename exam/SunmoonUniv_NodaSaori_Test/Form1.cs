@@ -26,7 +26,6 @@ namespace SunmoonUniv_NodaSaori_Test
         HybridShapeTypeLib.HybridShapePointCoord pt2 = null;
         HybridShapeTypeLib.HybridShapePointCoord pt3 = null;
 
-
         public Form1()
         {
             InitializeComponent();
@@ -112,6 +111,8 @@ namespace SunmoonUniv_NodaSaori_Test
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
+
             if (catia == null)
             {
                 MessageBox.Show("Please run CATIA");
@@ -150,6 +151,8 @@ namespace SunmoonUniv_NodaSaori_Test
             DrwGenBeh.GetProjectionPlane(out X1, out Y1, out Z1, out X2, out Y2, out Z2);
 
            
+            //MECMOD.Body Bdy = Prt.MainBody;
+            //MECMOD.Shapes Shps = Bdy.Shapes;
 
             //7.point txt, leader생성
            // CreateTxt(DrwGenBeh, X1, Y1, Z1, X2, Y2, Z2, pt1, DrwView);
@@ -194,12 +197,10 @@ namespace SunmoonUniv_NodaSaori_Test
             Y = (double)ap2[1];
             Z = (double)ap2[2];
 
-            COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) /
-                ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) / ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
             VW_H = Math.Sqrt(X * X + Y * Y + Z * Z) * COS_ALPHA;
 
-            COS_ALPHA = (X * X2 + Y * Y2 + Z * Z2) / 
-                ((Math.Pow(X2, 2) + Math.Pow(Y2, 2) + Math.Pow(Z2, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            COS_ALPHA = (X * X2 + Y * Y2 + Z * Z2) / ((Math.Pow(X2, 2) + Math.Pow(Y2, 2) + Math.Pow(Z2, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
             VW_V = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)) * COS_ALPHA;
 
             fac = DrwView.Factory2D;
@@ -234,8 +235,6 @@ namespace SunmoonUniv_NodaSaori_Test
             MECMOD.PartDocument PrtDoc = (MECMOD.PartDocument)Prd.ReferenceProduct.Parent;
             MECMOD.Part Prt = PrtDoc.Part;
 
-           // MECMOD.Body Bdy = Prt.MainBody;
-            //MECMOD.Shapes Shps = Bdy.Shapes;
             MECMOD.HybridBody bs = Prt.HybridBodies.Item("forTestGS").HybridBodies.Item("Base") ;
 
             HybridShapeTypeLib.Point ptA = (HybridShapeTypeLib.Point)bs.HybridShapes.GetItem("PT-A");
