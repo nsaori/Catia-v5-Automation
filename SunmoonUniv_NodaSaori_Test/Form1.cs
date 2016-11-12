@@ -170,20 +170,24 @@ namespace SunmoonUniv_NodaSaori_Test
             pt2.GetCoordinates(ap2);
             pt3.GetCoordinates(ap3);
 
+            //pt1---
             double X = (double)ap1[0];
             double Y = (double)ap1[1];
             double Z = (double)ap1[2];
 
             double COS_ALPHA = 0, VW_H = 0, VW_V = 0;
 
-            //계산과정
+            /*
             COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) / ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
             VW_H = Math.Sqrt(X * X + Y * Y + Z * Z) * COS_ALPHA;
 
             COS_ALPHA = (X * X2 + Y * Y2 + Z * Z2) / ((Math.Pow(X2, 2) + Math.Pow(Y2, 2) + Math.Pow(Z2, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
             VW_V = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)) * COS_ALPHA;
-
+            */
             MECMOD.Factory2D fac = DrwView.Factory2D;
+            VW_H = 0;
+            VW_V = 0;
+
             fac.CreatePoint(VW_H, VW_V);
 
             DRAFTINGITF.DrawingText txt = DrwView.Texts.Add(pt1.get_Name()+"( " + (int)X + " , " + (int)Y + " , " + (int)Z + " )", VW_H + 20, VW_V - 20);
@@ -229,10 +233,15 @@ namespace SunmoonUniv_NodaSaori_Test
 
             FDleadr = txt.Leaders.Add(VW_H, VW_V);
 
-            //pt3---
-            X = (double)ap3[0];
-            Y = (double)ap3[1];
-            Z = (double)ap3[2];
+            //pt_A----
+            MECMOD.HybridBody bs = Prt.HybridBodies.Item("forTestGS").HybridBodies.Item("Base") ;
+
+            HybridShapeTypeLib.Point ptA = (HybridShapeTypeLib.Point)bs.HybridShapes.GetItem("PT-A");
+            object[] aa = new object[3];
+            ptA.GetCoordinates(aa);
+            X = (double)aa[0];
+            Y = (double)aa[1];
+            Z = (double)aa[2];
 
             COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) / ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
             VW_H = Math.Sqrt(X * X + Y * Y + Z * Z) * COS_ALPHA;
@@ -243,7 +252,7 @@ namespace SunmoonUniv_NodaSaori_Test
             fac = DrwView.Factory2D;
             fac.CreatePoint(VW_H, VW_V);
 
-            txt = DrwView.Texts.Add(pt3.get_Name() + "( " + (int)X + " , " + (int)Y + " , " + (int)Z + " )", VW_H + 20, VW_V - 20);
+            txt = DrwView.Texts.Add(ptA.get_Name() + "( " + (int)X + " , " + (int)Y + " , " + (int)Z + " )", VW_H -20, VW_V + 40);
             txt.SetFontSize(0, 0, 12);
 
             FDleadr = txt.Leaders.Add(VW_H, VW_V);
@@ -255,28 +264,44 @@ namespace SunmoonUniv_NodaSaori_Test
             list.Add(pt2);
             list.Add(pt3);
 
-
-            DRAFTINGITF.DrawingTable table = DrwView.Tables.Add(200,200,4,4,36,100);
+            int col = 4;
+            int row = 5;
+            DRAFTINGITF.DrawingTable table = DrwView.Tables.Add(200,200,row,col,36,80);
+            
             table.SetCellString(1,1,"Name");
             table.SetCellString(1, 2, "X");
             table.SetCellString(1, 3, "Y");
             table.SetCellString(1, 4, "Z");
 
-            for (int i = 2; i <= 4; i++)
-            {
+            int ii = 2;
                 foreach (HybridShapeTypeLib.Point p in list)
                 {
                     object[] ap = new object[3];
                     p.GetCoordinates(ap);
 
-                    table.SetCellString(i, 1, p.get_Name());
-                    table.SetCellString(i, 2, ap[0]+"");
-                    table.SetCellString(i, 3, ap[1] + "");
-                    table.SetCellString(i, 4, ap[2] + "");
+                    table.SetCellString(ii, 1, p.get_Name());
+                    table.SetCellString(ii, 2, ap[0]+"");
+                    table.SetCellString(ii, 3, ap[1] + "");
+                    table.SetCellString(ii, 4, ap[2] + "");
+                    ii++;
                 }
                 
-            }
+            table.SetCellString(5, 1, ptA.get_Name());
+            table.SetCellString(5, 2, aa[0] + "");
+            table.SetCellString(5, 3, aa[1] + "");
+            table.SetCellString(5, 4, aa[2] + "");
 
+            //table txt stayle 변경---
+            for (int i = 1; i <=row  ; i++)
+            {
+                for (int j = 1; j <= col ; j++)
+                {
+                    table.GetCellObject(i, j).SetFontSize(0,0,14);
+                    table.GetCellObject(i, j).TextProperties.Justification = CatJustification.catCenter;
+
+                }
+            }
+            
 
             drwDoc.Update();
 
