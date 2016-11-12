@@ -190,7 +190,93 @@ namespace SunmoonUniv_NodaSaori_Test
             txt.SetFontSize(0, 0, 12);
 
             DRAFTINGITF.DrawingLeader FDleadr = txt.Leaders.Add(VW_H, VW_V);
-            
+
+            //pt2---
+            X = (double)ap2[0];
+            Y = (double)ap2[1];
+            Z = (double)ap2[2];
+
+            COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) / ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            VW_H = Math.Sqrt(X * X + Y * Y + Z * Z) * COS_ALPHA;
+
+            COS_ALPHA = (X * X2 + Y * Y2 + Z * Z2) / ((Math.Pow(X2, 2) + Math.Pow(Y2, 2) + Math.Pow(Z2, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            VW_V = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)) * COS_ALPHA;
+
+            fac = DrwView.Factory2D;
+            fac.CreatePoint(VW_H, VW_V);
+
+           txt = DrwView.Texts.Add(pt2.get_Name() + "( " + (int)X + " , " + (int)Y + " , " + (int)Z + " )", VW_H + 20, VW_V - 20);
+           txt.SetFontSize(0, 0, 12);
+
+           FDleadr = txt.Leaders.Add(VW_H, VW_V);
+
+            //pt3---
+            X = (double)ap3[0];
+            Y = (double)ap3[1];
+            Z = (double)ap3[2];
+
+            COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) / ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            VW_H = Math.Sqrt(X * X + Y * Y + Z * Z) * COS_ALPHA;
+
+            COS_ALPHA = (X * X2 + Y * Y2 + Z * Z2) / ((Math.Pow(X2, 2) + Math.Pow(Y2, 2) + Math.Pow(Z2, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            VW_V = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)) * COS_ALPHA;
+
+            fac = DrwView.Factory2D;
+            fac.CreatePoint(VW_H, VW_V);
+
+            txt = DrwView.Texts.Add(pt3.get_Name() + "( " + (int)X + " , " + (int)Y + " , " + (int)Z + " )", VW_H + 20, VW_V - 20);
+            txt.SetFontSize(0, 0, 12);
+
+            FDleadr = txt.Leaders.Add(VW_H, VW_V);
+
+            //pt3---
+            X = (double)ap3[0];
+            Y = (double)ap3[1];
+            Z = (double)ap3[2];
+
+            COS_ALPHA = (X * X1 + Y * Y1 + Z * Z1) / ((Math.Pow(X1, 2) + Math.Pow(Y1, 2) + Math.Pow(Z1, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            VW_H = Math.Sqrt(X * X + Y * Y + Z * Z) * COS_ALPHA;
+
+            COS_ALPHA = (X * X2 + Y * Y2 + Z * Z2) / ((Math.Pow(X2, 2) + Math.Pow(Y2, 2) + Math.Pow(Z2, 2)) * Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)));
+            VW_V = Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2) + Math.Pow(Z, 2)) * COS_ALPHA;
+
+            fac = DrwView.Factory2D;
+            fac.CreatePoint(VW_H, VW_V);
+
+            txt = DrwView.Texts.Add(pt3.get_Name() + "( " + (int)X + " , " + (int)Y + " , " + (int)Z + " )", VW_H + 20, VW_V - 20);
+            txt.SetFontSize(0, 0, 12);
+
+            FDleadr = txt.Leaders.Add(VW_H, VW_V);
+            //------
+            //table 생성
+
+            List<HybridShapeTypeLib.Point> list = new List<HybridShapeTypeLib.Point>();
+            list.Add(pt1);
+            list.Add(pt2);
+            list.Add(pt3);
+
+
+            DRAFTINGITF.DrawingTable table = DrwView.Tables.Add(200,200,4,4,36,100);
+            table.SetCellString(1,1,"Name");
+            table.SetCellString(1, 2, "X");
+            table.SetCellString(1, 3, "Y");
+            table.SetCellString(1, 4, "Z");
+
+            for (int i = 2; i <= 4; i++)
+            {
+                foreach (HybridShapeTypeLib.Point p in list)
+                {
+                    object[] ap = new object[3];
+                    p.GetCoordinates(ap);
+
+                    table.SetCellString(i, 1, p.get_Name());
+                    table.SetCellString(i, 2, ap[0]+"");
+                    table.SetCellString(i, 3, ap[1] + "");
+                    table.SetCellString(i, 4, ap[2] + "");
+                }
+                
+            }
+
 
             drwDoc.Update();
 
