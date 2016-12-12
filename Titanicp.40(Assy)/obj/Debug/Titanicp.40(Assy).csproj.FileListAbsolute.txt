@@ -10,3 +10,12 @@ C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Titanicp.40(Assy)\b
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Titanicp.40(Assy).csprojResolveAssemblyReference.cache
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Titanicp.40(Assy).exe
 C:\Users\517-11\Desktop\saori\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Titanicp.40(Assy).pdb
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\bin\Debug\Titanicp.40(Assy).exe.config
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Interop.INFITF.dll
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Interop.KnowledgewareTypeLib.dll
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Interop.MECMOD.dll
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Interop.PARTITF.dll
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Interop.ProductStructureTypeLib.dll
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Titanicp.40(Assy).csproj.ResolveComReference.cache
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Titanicp.40(Assy).exe
+C:\Users\517-11\Desktop\saori\20160704\Automation\Catia-v5-Automation\Titanicp.40(Assy)\obj\Debug\Titanicp.40(Assy).pdb
